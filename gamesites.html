@@ -85,12 +85,15 @@
         .image-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: flex-start; /* Align items to the start of the flex container */
         }
 
         .image-item {
             text-align: center;
+            margin-right: 20px; /* Adjust the space between items */
             margin-bottom: 20px;
+            flex: 0 0 calc(16.666% - 20px); /* Adjust the width of each item */
+            box-sizing: border-box;
         }
 
         .image-item a {
@@ -100,7 +103,6 @@
 
         .image-item img {
             width: 100%;
-            max-width: 150px; /* Adjust the maximum width of the images */
             height: auto;
             border: 1px solid #ddd; /* Add a border to the images for better visibility */
             border-radius: 8px; /* Optional: Add border-radius for a rounded appearance */
@@ -112,13 +114,13 @@
 <div class="image-container">
     <div class="image-item">
         <a href="page1.html">
-            <img src="images/monkeymart.jpg" alt="Image 1">
+            <img src="image1.jpg" alt="Image 1">
             <p>Text for Image 1</p>
         </a>
     </div>
     <div class="image-item">
         <a href="page2.html">
-            <img src="images/monkeymart.jpg" alt="Image 2">
+            <img src="image2.jpg" alt="Image 2">
             <p>Text for Image 2</p>
         </a>
     </div>
