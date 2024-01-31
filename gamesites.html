@@ -226,11 +226,10 @@
     <!-- Add more image-item divs as needed -->
 </div>
    <script>
-    // JavaScript to alphabetically sort game items
     document.addEventListener("DOMContentLoaded", function() {
         var container = document.getElementById("gameContainer");
-        var items = container.getElementsByClassName("image-item");
-        
+        var items = container.querySelectorAll(".image-item");
+
         // Convert NodeList to Array for sorting
         var itemsArray = Array.from(items);
 
@@ -241,12 +240,18 @@
             return nameA.localeCompare(nameB);
         });
 
+        // Remove existing items from the container
+        itemsArray.forEach(function(item) {
+            container.removeChild(item);
+        });
+
         // Append sorted items back to the container
         itemsArray.forEach(function(item) {
             container.appendChild(item);
         });
     });
 </script>
+
           
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
