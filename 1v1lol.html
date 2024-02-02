@@ -9,12 +9,12 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden
+            overflow: hidden;
         }
 
         .forceIosScrolling {
             overflow: scroll;
-            -webkit-overflow-scrolling: touch
+            -webkit-overflow-scrolling: touch;
         }
     </style>
     <style type="text/css"></style>
@@ -61,10 +61,19 @@
                 } else {
                     iframe.style.overflow = 'auto';
                 }
-                
-                // Lock the cursor to the iframe when clicking inside it
+
+                // Request pointer lock when clicking inside the iframe
                 iframe.contentDocument.body.addEventListener('click', function () {
                     iframe.contentDocument.body.requestPointerLock();
+                });
+
+                // Handle pointer lock change event
+                document.addEventListener('pointerlockchange', function () {
+                    if (document.pointerLockElement === iframe.contentDocument.body) {
+                        console.log('Pointer locked inside iframe');
+                    } else {
+                        console.log('Pointer unlocked');
+                    }
                 });
             } else {
                 iframe.style.pointerEvents = 'none';
