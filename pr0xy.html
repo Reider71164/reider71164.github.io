@@ -4,21 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>plspls work v4</title>
-    <base href="https://now.gg">
-    <!-- Other head elements -->
+    <title>Proxy Example</title>
 </head>
 <body>
 
 <script>
-    // Replace 'https://external-site.com' with the URL of the site you want to proxy
-    const externalSiteUrl = 'https://now.gg';
+    const externalSiteUrl = 'https://raw.githubusercontent.com/Reider71164/reider71164.github.io/main/proxy.php'; // Replace with the actual URL of your proxy.php file
 
-    // Fetch data from the external site
     fetch(externalSiteUrl)
         .then(response => response.text())
         .then(data => {
-            // Display the fetched content on your GitHub Pages site
             document.body.innerHTML = data;
         })
         .catch(error => console.error('Error fetching data:', error));
