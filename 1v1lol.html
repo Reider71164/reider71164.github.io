@@ -9,12 +9,12 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden
+            overflow: hidden;
         }
 
         .forceIosScrolling {
             overflow: scroll;
-            -webkit-overflow-scrolling: touch
+            -webkit-overflow-scrolling: touch;
         }
 
         #game-container {
@@ -36,8 +36,10 @@
 </head>
 
 <body>
-    <iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" frameborder="0" allowfullscreen=""
-        src="https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@57aba9c568b75b8aaddbcad0a05f8c26f57b344b/package/1v1old.xml" style="overflow: auto;">
+    <iframe id="innerFrame" name="innerFrame"
+        sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation"
+        frameborder="0" allowfullscreen=""
+        src="https://example.com/your-game" style="overflow: auto;">
     </iframe>
 
     <script>
@@ -79,7 +81,7 @@
                     var mouseX = event.clientX;
                     var mouseY = event.clientY;
 
-                    // Adjust player position here based on mouse movement
+                    // Adjust player position based on mouse movement
                     player.style.left = mouseX + 'px';
                     player.style.top = mouseY + 'px';
                 });
