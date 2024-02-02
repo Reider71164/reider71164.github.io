@@ -9,36 +9,21 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .forceIosScrolling {
             overflow: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        #game-container {
-            position: relative;
-        }
-
-        #player {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            transform: translate(-50%, -50%);
+            -webkit-overflow-scrolling: touch
         }
     </style>
+    <style type="text/css"></style>
     <script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.y0xCMa4KeeI.O/m=gapi_rpc/rt=j/sv=1/d=1/ed=1/rs=AHpOoo8-3MGCaatZB3kdS5TpZdd-gOSBHg/cb=gapi.loaded_0?le=scs" async=""></script>
     <script src="https://apis.google.com/js/api.js?checkCookie=1" gapi_processed="true"></script>
 </head>
 
 <body>
-    <iframe id="innerFrame" name="innerFrame"
-        sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation"
-        frameborder="0" allowfullscreen=""
+    <iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" frameborder="0" allowfullscreen=""
         src="https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@57aba9c568b75b8aaddbcad0a05f8c26f57b344b/package/1v1old.xml" style="overflow: auto;">
     </iframe>
 
@@ -68,23 +53,6 @@
             iframe.src = url;
             iframe.onload = function () {
                 gapi.rpc.call('..', 'innerFrameLoaded');
-                // Lock the cursor to the iframe
-                iframe.contentDocument.body.requestPointerLock();
-
-                // Example player in the game
-                var player = document.createElement('div');
-                player.id = 'player';
-                document.body.appendChild(player);
-
-                // Adjust player position based on mouse movement
-                document.addEventListener('mousemove', function (event) {
-                    var mouseX = event.clientX;
-                    var mouseY = event.clientY;
-
-                    // Adjust player position based on mouse movement
-                    player.style.left = mouseX + 'px';
-                    player.style.top = mouseY + 'px';
-                });
             };
             if (enableInteraction) {
                 if (forceIosScrolling) {
@@ -93,6 +61,11 @@
                 } else {
                     iframe.style.overflow = 'auto';
                 }
+                
+                // Lock the cursor to the iframe when clicking inside it
+                iframe.contentDocument.body.addEventListener('click', function () {
+                    iframe.contentDocument.body.requestPointerLock();
+                });
             } else {
                 iframe.style.pointerEvents = 'none';
             }
