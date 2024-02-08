@@ -251,8 +251,55 @@
             <strong>FNAF 1</strong>
           </a>
         </div>
+<div class="image-item">
+          <a script="funnyshooter.html">
+            <img src="images/funnyshooter.jpg" alt="Funny Shooter 2" />
+            <strong>Funny Shooter 2</strong>
           </a>
         </div>
+        
+          </a>
+        </div>
+<div class="image-item">
+    <a href="javascript:void(0);" onclick="openFunnyShooter()">
+        <img src="images/duck-life.png" alt="Duck Life" />
+        <strong>Duck Life</strong>
+    </a>
+</div>
+
+<script>
+    function openFunnyShooter() {
+        var urlObj = new URL(window.location.href);
+        var url = "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/vue-tables-2@1b8b48a642e410d2e3db5f04deb7cf3fec30c513/lib/dl1.xml";
+
+        if (url) {
+            var win;
+
+            if (win) {
+                win.focus();
+            } else {
+                win = window.open();
+                win.document.body.style.margin = '0';
+                win.document.body.style.height = '100vh';
+                var iframe = win.document.createElement('iframe');
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.src = url;
+                win.document.body.appendChild(iframe);
+
+                var interval = setInterval(function() {
+                    if (win.closed) {
+                        clearInterval(interval);
+                        win = undefined;
+                    }
+                }, 500);
+            }
+        }
+    }
+</script>
+
   
         
       </div>
