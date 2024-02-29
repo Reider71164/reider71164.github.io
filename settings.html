@@ -84,6 +84,23 @@
       }
       </style>
       
+<script>
+      function changeIcon() {
+        var newIcon = document.getElementById('iconInput').value;
+        var currentTitle = document.getElementById('titleInput').value;
+
+      document.getElementById('tabContent').innerHTML = `<p>${newIcon} - $ {currentTitle}</p>`;
+      }
+
+      function changeTitle() {
+        var currentIcon = document.getElementById('iconInput').value;
+        var newTitle = document.getElementById('titleInput').value;
+
+      document.getElementById('tabContent').innerHTML = `<p>${currentIcon} - $ {newTitle}</p>`;
+        document.title = newTitle;
+      }
+</script>
+      
       <div class="row">
         <div class="label">Icons</div>
         <input type="text" id="iconInput" placeholder="New Icon">
@@ -97,7 +114,7 @@
       </div>
       
       <div id="tabContent" class="tab-content">
-        <p>this took like 20 mins only to code</p>
+        <p>Default Content</p>
       </div>
         
         
