@@ -85,18 +85,21 @@
       </style>
       
 <script>
+
+  document.getElementById('tabContent').innerHTML = '<p id="contentParagraph">Default Content</p`;
+  
       function changeIcon() {
         var newIcon = document.getElementById('iconInput').value;
         var currentTitle = document.getElementById('titleInput').value;
 
-      document.getElementById('tabContent').innerHTML = `<p>${newIcon} - $ {currentTitle}</p>`;
+      document.getElementById('contentParagraph').innerHTML = `<img src="$ {newIconUrl}" alt="Icon"> - $ {currentTitle}`;
       }
 
       function changeTitle() {
         var currentIcon = document.getElementById('iconInput').value;
         var newTitle = document.getElementById('titleInput').value;
 
-      document.getElementById('tabContent').innerHTML = `<p>${currentIcon} - $ {newTitle}</p>`;
+      document.getElementById('contentParagraph').innerHTML = `<img src="$ {currentIconUrl}" alt="Icon"> - $ {newTitle}`;
         document.title = newTitle;
       }
 </script>
@@ -114,7 +117,7 @@
       </div>
       
       <div id="tabContent" class="tab-content">
-        <p>Default Content</p>
+        <p id="contentParagraph">Default Content</p>
       </div>
         
         
