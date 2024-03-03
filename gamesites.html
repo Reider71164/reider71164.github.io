@@ -494,6 +494,7 @@
     <div class="popup"></div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Sorting your image items alphabetically by game names
         var container = document.querySelector(".image-container");
         var items = container.querySelectorAll(".image-item");
 
@@ -516,6 +517,12 @@
         itemsArray.forEach(function (item) {
           container.appendChild(item);
         });
+
+        // Count and display the number of image items
+        var itemCount = items.length;
+        var itemCountElement = document.createElement("p");
+        itemCountElement.textContent = "Number of image items: " + itemCount;
+        document.body.appendChild(itemCountElement);
       });
     </script>
   </body>
