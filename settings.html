@@ -104,21 +104,10 @@
       }
 </script>
       
-      <div class="row">
-        <div class="label">Icons</div>
-        <input type="text" id="iconInput" placeholder="New Icon">
-        <button onclick="changeIcon()"style ="color: black;">Change Icon</button>
-      </div>
+      <p style="text-align: center;"><input onchange="updatetab(this.value)" placeholder="Title Here" class="settingsinput" id="updatetab"></p>
+      <p style="text-align: center;"><input onchange="updateicon(this.value)" placeholder="Icon Link Here" class="settingsinput" id="updateicon"></p>
       
-      <div class="row">
-        <div class="label">Titles</div>
-        <input type="text" id="titleInput" placeholder="New Title">
-        <button onclick="changeTitle()"style ="color: black;">Change Title</button>
-      </div>
-      
-      <div id="tabContent" class="tab-content">
-        <p id="contentParagraph">Default Content</p>
-      </div>
+     
         
         
       </div>
