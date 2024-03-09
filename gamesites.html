@@ -209,7 +209,7 @@
           </a>
         </div>
         <div class="image-item">
-          <a href="https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@57aba9c568b75b8aaddbcad0a05f8c26f57b344b/package/1v1old.xml">
+          <a href="javascript:void(0);" onclick="1v1lol()">
             <img src="images/1v1lol.png" alt="1v1.lol" />
             <strong>1v1.lol</strong>
           </a>
@@ -484,6 +484,49 @@
         }
     }
 </script>
+        
+        <script>
+          function 1v1lol() {
+    var gameUrls = [
+      "https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/WPpluginsync@main/lib/edit/up.xml&container=ig"
+    ];
+
+    function openGameWindow(gameNumber) {
+      return function() {
+        var win;
+        if (win) {
+          win.focus();
+        } else {
+          win = window.open();
+          win.document.body.style.margin = '0';
+          win.document.body.style.height = '100vh';
+          var iframe = win.document.createElement('iframe');
+          iframe.style.border = 'none';
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.margin = '0';
+          iframe.src = gameUrls[gameNumber - 1]; 
+          win.document.body.appendChild(iframe);
+
+          var interval = setInterval(function() {
+            if (win.closed) {
+              clearInterval(interval);
+              win = undefined;
+            }
+          }, 500);
+        }
+      };
+    }
+
+    setTimeout(function() {
+      document.getElementById("buttonContainer").style.display = "block";
+    }, 3000);
+
+    document.querySelectorAll('.c-button').forEach(function(button, index) {
+      button.onclick = openGameWindow(index + 1);
+    });
+          }
+        </script>
         
           </a>
         </div>
