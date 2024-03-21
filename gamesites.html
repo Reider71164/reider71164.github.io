@@ -79,6 +79,39 @@
     <div class="container">
       <div></div>
       <strong class="section-text">TO FIX ROBLOX, OPEN 2 TABS OF IT AND ONE OF THEM WILL WORK<br>SUBMIT NEW GAME REQUESTS I DELETED THEM ALL WE HAD 1K+!<br> https://discord.gg/7UwPzsA4sp</strong>
+      <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sorting your image items alphabetically by game names
+        var container = document.querySelector(".image-container");
+        var items = container.querySelectorAll(".image-item");
+
+        // Convert NodeList to Array for sorting
+        var itemsArray = Array.from(items);
+
+        // Sort the array alphabetically based on game names
+        itemsArray.sort(function (a, b) {
+          var nameA = a.querySelector("strong").innerText.toUpperCase();
+          var nameB = b.querySelector("strong").innerText.toUpperCase();
+          return nameA.localeCompare(nameB);
+        });
+
+        // Remove existing items from the container
+        itemsArray.forEach(function (item) {
+          container.removeChild(item);
+        });
+
+        // Append sorted items back to the container
+        itemsArray.forEach(function (item) {
+          container.appendChild(item);
+        });
+
+        // Count and display the number of image items
+        var itemCount = items.length;
+        var itemCountElement = document.createElement("p");
+        itemCountElement.textContent = "Number of Games: " + itemCount;
+        document.body.appendChild(itemCountElement);
+      });
+    </script>
       <style>
         .image-container {
           display: flex;
@@ -549,38 +582,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/popup.js"></script>
     <div class="popup"></div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Sorting your image items alphabetically by game names
-        var container = document.querySelector(".image-container");
-        var items = container.querySelectorAll(".image-item");
-
-        // Convert NodeList to Array for sorting
-        var itemsArray = Array.from(items);
-
-        // Sort the array alphabetically based on game names
-        itemsArray.sort(function (a, b) {
-          var nameA = a.querySelector("strong").innerText.toUpperCase();
-          var nameB = b.querySelector("strong").innerText.toUpperCase();
-          return nameA.localeCompare(nameB);
-        });
-
-        // Remove existing items from the container
-        itemsArray.forEach(function (item) {
-          container.removeChild(item);
-        });
-
-        // Append sorted items back to the container
-        itemsArray.forEach(function (item) {
-          container.appendChild(item);
-        });
-
-        // Count and display the number of image items
-        var itemCount = items.length;
-        var itemCountElement = document.createElement("p");
-        itemCountElement.textContent = "Number of Games: " + itemCount;
-        document.body.appendChild(itemCountElement);
-      });
-    </script>
+    
   </body>
 </html>
