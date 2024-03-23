@@ -84,30 +84,37 @@
       }
       </style>
       
-<script>
+<!-- Google Classroom Button -->
+  <button id="googleBtn" class="btn" onclick="changeGoogle()">
+    <i class="fa fa-google"></i>
+    <span id="googleText">Google Classroom</span>
+  </button>
 
-  document.getElementById('tabContent').innerHTML = '<p id="contentParagraph">Default Content</p`;
-  
-      function changeIcon() {
-        var newIcon = document.getElementById('iconInput').value;
-        var currentTitle = document.getElementById('titleInput').value;
+  <!-- iReady Button -->
+  <button id="ireadyBtn" class="btn" onclick="changeiReady()">
+    <i class="fa fa-chalkboard-teacher"></i>
+    <span id="ireadyText">iReady</span>
+  </button>
 
-      document.getElementById('contentParagraph').innerHTML = `<img src="$ {newIconUrl}" alt="Icon"> - $ {currentTitle}`;
-      }
+  <script>
+    function changeGoogle() {
+      document.title = "Google Classroom"; // Change tab title
+      var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      favicon.href = 'classroom-favicon.ico'; // Path to Google's favicon
+      favicon.type = 'images/x-icon';
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon); // Change favicon
+    }
 
-      function changeTitle() {
-        var currentIcon = document.getElementById('iconInput').value;
-        var newTitle = document.getElementById('titleInput').value;
-
-      document.getElementById('contentParagraph').innerHTML = `<img src="$ {currentIconUrl}" alt="Icon"> - $ {newTitle}`;
-        document.title = newTitle;
-      }
-</script>
-      
-      <p class="center">Cloaks: <button onclick="updatetab('Classes'); updateicon('classroom.png'); location.reload()">Google Classroom</button>
-    <button onclick="updatetab('My Drive - Google Drive'); updateicon('drive.png'); location.reload()">Google Drive</button>
-    <button onclick="updatetab('New Tab'); updateicon('newtab.png'); location.reload()">New Tab</button>
-    <button onclick="updatetab('Iready'); updateicon('iready.png'); location.reload()">Iready</button>
+    function changeiReady() {
+      document.title = "Choose a subject, i-Ready"; // Change tab title
+      var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      favicon.href = 'icon_964188f.ico'; // Path to iReady's favicon
+      favicon.type = 'image/x-icon';
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon); // Change favicon
+    }
+  </script>
       
      
         
