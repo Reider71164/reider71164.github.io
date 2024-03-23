@@ -91,7 +91,46 @@
       </style>
       
 
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons</title>
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Style for the container */
+    .container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    /* Style for the text above the buttons */
+    .heading {
+      color: #fff; /* Text color set to white */
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    /* Style for the buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #000;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    /* Style for the icons */
+    .fa {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
     <div class="heading">Cloaks</div>
     <!-- Google Classroom Button -->
     <button id="googleBtn" class="btn" onclick="changeGoogle()">
@@ -104,13 +143,19 @@
       <i class="fa fa-chalkboard-teacher"></i>
       <span id="ireadyText">iReady</span>
     </button>
+    
+    <!-- Schoology Button -->
+    <button id="schoologyBtn" class="btn" onclick="changeSchoology()">
+      <i class="fa fa-school"></i>
+      <span id="schoologyText">Schoology</span>
+    </button>
   </div>
 
   <script>
     function changeGoogle() {
       document.title = "Google Classroom"; // Change tab title
       var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-      favicon.href = 'images/classroom-favicon.ico'; // Path to example favicon
+      favicon.href = 'images/classroom-favicon.ico'; // Path to Google Classroom favicon
       favicon.type = 'image/x-icon';
       favicon.rel = 'icon';
       document.head.appendChild(favicon); // Change favicon
@@ -119,12 +164,24 @@
     function changeiReady() {
       document.title = "iReady"; // Change tab title
       var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-      favicon.href = 'images/icon_964188f.ico'; // Path to example favicon
+      favicon.href = 'images/icon_964188f.ico'; // Path to iReady favicon
+      favicon.type = 'image/x-icon';
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon); // Change favicon
+    }
+
+    function changeSchoology() {
+      document.title = "Home | Schoology"; // Change tab title
+      var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      favicon.href = 'images/schoology.ico'; // Path to Schoology favicon
       favicon.type = 'image/x-icon';
       favicon.rel = 'icon';
       document.head.appendChild(favicon); // Change favicon
     }
   </script>
+</body>
+</html>
+
       
      
         
