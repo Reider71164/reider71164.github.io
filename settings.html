@@ -12,7 +12,7 @@
     <style>
       body {
         font-family: Roboto;
-        color: #ffffff;
+        color: #000;
         text-align: center;
         background-color: #1c1c1c;
         cursor: url('images/pointerblue1.png'), none;
@@ -100,7 +100,7 @@
     function changeGoogle() {
       document.title = "Google Classroom"; // Change tab title
       var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-      favicon.href = 'classroom-favicon.ico'; // Path to Google's favicon
+      favicon.href = 'images/classroom-favicon.ico'; // Path to Google's favicon
       favicon.type = 'images/x-icon';
       favicon.rel = 'icon';
       document.head.appendChild(favicon); // Change favicon
@@ -109,7 +109,7 @@
     function changeiReady() {
       document.title = "Choose a subject, i-Ready"; // Change tab title
       var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-      favicon.href = 'icon_964188f.ico'; // Path to iReady's favicon
+      favicon.href = 'images/icon_964188f.ico'; // Path to iReady's favicon
       favicon.type = 'image/x-icon';
       favicon.rel = 'icon';
       document.head.appendChild(favicon); // Change favicon
