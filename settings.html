@@ -12,12 +12,18 @@
     <style>
       body {
         font-family: Roboto;
-        color: #ffffff;
+        color: #000;
         text-align: center;
         background-color: #1c1c1c;
         cursor: url('images/pointerblue1.png'), none;
         padding-top: 9.5%;
       }
+      /* Style for the text above the buttons */
+    .heading {
+      color: #fff; /* Text color set to white */
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
       a:hover,
       button:hover {
@@ -64,7 +70,7 @@
               <a href="gamesites.html">Games</a>
             </li>
             <li>
-              <a href="apps.html">Apps</a>
+              <a href="prxy.html">Pr0xy</a>
             </li>
             <li class="active">
               <a href="settings.html">Settings</a>
@@ -84,30 +90,109 @@
       }
       </style>
       
-<script>
 
-  document.getElementById('tabContent').innerHTML = '<p id="contentParagraph">Default Content</p`;
-  
-      function changeIcon() {
-        var newIcon = document.getElementById('iconInput').value;
-        var currentTitle = document.getElementById('titleInput').value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons</title>
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Style for the container */
+    .container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    /* Style for the text above the buttons */
+    .heading {
+      color: #fff; /* Text color set to white */
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    /* Style for the buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #000;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    /* Style for the icons */
+    .fa {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">Cloaks</div>
+    <!-- Google Classroom Button -->
+    <button id="googleBtn" class="btn" onclick="changeGoogle()">
+      <span id="googleText">Google Classroom</span>
+    </button>
 
-      document.getElementById('contentParagraph').innerHTML = `<img src="$ {newIconUrl}" alt="Icon"> - $ {currentTitle}`;
-      }
+    <!-- Math iReady Button -->
+    <button id="ireadyBtn" class="btn" onclick="changeiReady1()">
+      <span id="ireadyText"> Math iReady</span>
+    </button>
 
-      function changeTitle() {
-        var currentIcon = document.getElementById('iconInput').value;
-        var newTitle = document.getElementById('titleInput').value;
+    <!-- Reading iReady Button -->
+    <button id="ireadyBtn" class="btn" onclick="changeiReady2()">
+      <span id="ireadyText"> Reading iReady</span>
+    </button>
+    
+    <!-- Schoology Button -->
+    <button id="schoologyBtn" class="btn" onclick="changeSchoology()">
+      <span id="schoologyText">Schoology</span>
+    </button>
+  </div>
 
-      document.getElementById('contentParagraph').innerHTML = `<img src="$ {currentIconUrl}" alt="Icon"> - $ {newTitle}`;
-        document.title = newTitle;
-      }
-</script>
-      
-      <p class="center">Cloaks: <button onclick="updatetab('Classes'); updateicon('classroom.png'); location.reload()">Google Classroom</button>
-    <button onclick="updatetab('My Drive - Google Drive'); updateicon('drive.png'); location.reload()">Google Drive</button>
-    <button onclick="updatetab('New Tab'); updateicon('newtab.png'); location.reload()">New Tab</button>
-    <button onclick="updatetab('Iready'); updateicon('iready.png'); location.reload()">Iready</button>
+  <script>
+    function changeGoogle() {
+      document.title = "Google Classroom"; // Change tab title
+      var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      favicon.href = 'images/classroom-favicon.ico'; // Path to Google Classroom favicon
+      favicon.type = 'image/x-icon';
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon); // Change favicon
+    }
+
+    function changeiReady1() {
+      document.title = "Math to do, iReady"; // Change tab title
+      var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      favicon.href = 'images/icon_964188f.ico'; // Path to iReady favicon
+      favicon.type = 'image/x-icon';
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon); // Change favicon
+    }
+
+    function changeiReady2() {
+      document.title = "Reading to do, iReady"; // Change tab title
+      var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      favicon.href = 'images/icon_964188f.ico'; // Path to iReady favicon
+      favicon.type = 'image/x-icon';
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon); // Change favicon
+    }
+
+    function changeSchoology() {
+      document.title = "Home | Schoology"; // Change tab title
+      var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+      favicon.href = 'images/schoology.ico'; // Path to Schoology favicon
+      favicon.type = 'image/x-icon';
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon); // Change favicon
+    }
+  </script>
+</body>
+</html>
+
       
      
         

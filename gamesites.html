@@ -46,6 +46,8 @@
       gtag('js', new Date());
       gtag('config', 'G-KXRHPNW89S');
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3044824252307692"
+     crossorigin="anonymous"></script>
   </head>
   <body>
     <nav class="navbar navbar-inverse">
@@ -66,6 +68,9 @@
             <li>
               <a href="prxy.html">Pr0xy</a>
             </li>
+            <li>
+              <a href="settings.html">Settings</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -74,9 +79,66 @@
       <img src="logo.png" alt="" />
     </div>
     <script type="text/javascript" src="https://www.stat-counter.org/count/dsvg"></script><br>
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sorting your image items alphabetically by game names
+        var container = document.querySelector(".image-container");
+        var items = container.querySelectorAll(".image-item");
+
+        // Convert NodeList to Array for sorting
+        var itemsArray = Array.from(items);
+
+        // Sort the array alphabetically based on game names
+        itemsArray.sort(function (a, b) {
+          var nameA = a.querySelector("strong").innerText.toUpperCase();
+          var nameB = b.querySelector("strong").innerText.toUpperCase();
+          return nameA.localeCompare(nameB);
+        });
+
+        // Remove existing items from the container
+        itemsArray.forEach(function (item) {
+          container.removeChild(item);
+        });
+
+        // Append sorted items back to the container
+        itemsArray.forEach(function (item) {
+          container.appendChild(item);
+        });
+
+        // Count and display the number of image items
+        var itemCount = items.length;
+        var itemCountElement = document.createElement("p");
+        itemCountElement.textContent = "Number of Games: " + itemCount;
+        document.body.appendChild(itemCountElement);
+      });
+    </script>
     <div class="container">
       <div></div>
-      <strong class="section-text">TO FIX ROBLOX, OPEN 2 TABS OF IT AND ONE OF THEM WILL WORK<br> https://discord.gg/7UwPzsA4sp</strong>
+            <!-- Button to trigger the openGame function -->
+<button onclick="openGame()" style="color: black;">Cloaker</button>
+<script>
+function openGame() {
+    // Open a new window
+    var win = window.open("about:blank");
+
+    // Create an iframe element
+    var iframe = document.createElement('iframe');
+    iframe.src = window.location.href; // Load the current page URL into the iframe
+
+    // Set iframe styles
+    iframe.style.cssText = 'position: fixed; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999;';
+
+    // Append the iframe to the new window's document body
+    if (win) {
+        win.document.body.appendChild(iframe);
+    } else {
+        alert("Popup blocked. Please allow popups for this site and try again.");
+    }
+}
+</script>
+      <strong class="section-text">now gg is retarded so roblox is a luck game to get working!🤪<br> <br>ALL GAMES ARE NOW FIXED!<br> JOIN DISC FOR MORE LINKS:https://discord.gg/7UwPzsA4sp</strong>
+      
+
       <style>
         .image-container {
           display: flex;
@@ -167,13 +229,13 @@
           </a>
         </div>
         <div class="image-item">
-          <a href="motox3m.html">
+          <a href="motox3m">
             <img src="images/motox3m.png" alt="Moto X3M" />
             <strong>Moto X3M</strong>
           </a>
         </div>
         <div class="image-item">
-          <a href="motox3m2.html">
+          <a href="motox3m2">
             <img src="images/motox3m.png" alt="Moto X3M 2" />
             <strong>Moto X3M 2</strong>
           </a>
@@ -197,7 +259,7 @@
           </a>
         </div>
         <div class="image-item">
-          <a href="football-masters.html">
+          <a href="footballegends-">
             <img src="images/football-masters.png" alt="Football Masters" />
             <strong>Football Masters</strong>
           </a>
@@ -233,7 +295,7 @@
           </a>
         </div>
         <div class="image-item">
-          <a href="funnyshooter.html">
+          <a href="funny-shooter">
             <img src="images/funnyshooter.jpg" alt="Funny Shooter 2" />
             <strong>Funny Shooter 2</strong>
           </a>
@@ -251,7 +313,7 @@
     </a>
 </div>
 <div class="image-item">
-          <a href="papas-pizzeria.html">
+          <a href="papa-pizza.html">
             <img src="images/papas-pizzeria.png" alt="Papas Pizzeria" />
             <strong>Papas Pizzeria</strong>
           </a>
@@ -454,6 +516,25 @@
             <strong>Duck Life 5</strong>
           </a>
         </div>
+         <div class="image-item">
+          <a href="dogeminer2">
+            <img src="images/3045474-logo_400x400____jpeg____.jpg" width=200 height=200 alt="Doge Miner 2" />
+            <strong>Doge Miner 2</strong>
+          </a>
+        </div>
+        <div class="image-item">
+          <a href="shell-shockers.html">
+            <img src="images/shell-shockers.jpg" width=200 height=200 alt="Shell Shockers" />
+            <strong>Shell Shockers</strong>
+          </a>
+        </div>
+        <div class="image-item">
+          <a href="getaway-shootout">
+            <img src="images/934bde36-a4a1-43d0-8b35-30f15feddbb4.avif" width=200 height=200 alt="Getaway Shootout" />
+            <strong>Getaway Shootout</strong>
+          </a>
+        </div>
+
           
         
 
@@ -540,38 +621,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/popup.js"></script>
     <div class="popup"></div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Sorting your image items alphabetically by game names
-        var container = document.querySelector(".image-container");
-        var items = container.querySelectorAll(".image-item");
-
-        // Convert NodeList to Array for sorting
-        var itemsArray = Array.from(items);
-
-        // Sort the array alphabetically based on game names
-        itemsArray.sort(function (a, b) {
-          var nameA = a.querySelector("strong").innerText.toUpperCase();
-          var nameB = b.querySelector("strong").innerText.toUpperCase();
-          return nameA.localeCompare(nameB);
-        });
-
-        // Remove existing items from the container
-        itemsArray.forEach(function (item) {
-          container.removeChild(item);
-        });
-
-        // Append sorted items back to the container
-        itemsArray.forEach(function (item) {
-          container.appendChild(item);
-        });
-
-        // Count and display the number of image items
-        var itemCount = items.length;
-        var itemCountElement = document.createElement("p");
-        itemCountElement.textContent = "Number of Games: " + itemCount;
-        document.body.appendChild(itemCountElement);
-      });
-    </script>
+    
   </body>
 </html>
