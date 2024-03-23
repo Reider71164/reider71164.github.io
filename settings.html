@@ -84,33 +84,36 @@
       }
       </style>
       
-      <p>Cloaks</p>
-<!-- Google Classroom Button -->
-  <button id="googleBtn" class="btn" onclick="changeGoogle()">
-    <i class="fa fa-google"></i>
-    <span id="googleText">Google Classroom</span>
-  </button>
 
-  <!-- iReady Button -->
-  <button id="ireadyBtn" class="btn" onclick="changeiReady()">
-    <i class="fa fa-chalkboard-teacher"></i>
-    <span id="ireadyText">iReady</span>
-  </button>
+<div class="container">
+    <div class="heading">Cloaks</div>
+    <!-- Google Classroom Button -->
+    <button id="googleBtn" class="btn" onclick="changeGoogle()">
+      <i class="fa fa-google"></i>
+      <span id="googleText">Google Classroom</span>
+    </button>
+
+    <!-- iReady Button -->
+    <button id="ireadyBtn" class="btn" onclick="changeiReady()">
+      <i class="fa fa-chalkboard-teacher"></i>
+      <span id="ireadyText">iReady</span>
+    </button>
+  </div>
 
   <script>
     function changeGoogle() {
       document.title = "Google Classroom"; // Change tab title
       var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-      favicon.href = 'images/classroom-favicon.ico'; // Path to Google's favicon
-      favicon.type = 'images/x-icon';
+      favicon.href = 'images/classroom-favicon.ico'; // Path to example favicon
+      favicon.type = 'image/x-icon';
       favicon.rel = 'icon';
       document.head.appendChild(favicon); // Change favicon
     }
 
     function changeiReady() {
-      document.title = "Choose a subject, i-Ready"; // Change tab title
+      document.title = "iReady"; // Change tab title
       var favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-      favicon.href = 'images/icon_964188f.ico'; // Path to iReady's favicon
+      favicon.href = 'images/icon_964188f.ico'; // Path to example favicon
       favicon.type = 'image/x-icon';
       favicon.rel = 'icon';
       document.head.appendChild(favicon); // Change favicon
