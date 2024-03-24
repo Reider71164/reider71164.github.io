@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Room</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .chat-container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .chat-messages {
+        overflow-y: scroll;
+        max-height: 300px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .message {
+        margin-bottom: 10px;
+    }
+    .message span {
+        font-weight: bold;
+    }
+    .message-body {
+        margin-left: 20px;
+    }
+    .message-body:before {
+        content: ": ";
+    }
+    input[type="text"] {
+        width: calc(100% - 10px);
+        padding: 8px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    button {
+        padding: 8px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-messages" id="chatMessages"></div>
+    <div>
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    // Retrieve display name from local storage
+    var displayName = localStorage.getItem("displayName");
+
+    // Display user's display name
+    document.getElementById("chatMessages").innerHTML += "<div><span>You</span>: Connected as " + displayName + "</div>";
+
+    function sendMessage() {
+        var messageInput = document.getElementById("messageInput");
+        var message = messageInput.value.trim();
+        if (message !== "") {
+            // Display user's message in chat
+            document.getElementById("chatMessages").innerHTML += "<div><span>You</span>: " + message + "</div>";
+            // Clear input field
+            messageInput.value = "";
+        }
+    }
+</script>
+
+</body>
+</html>
