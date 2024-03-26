@@ -4,6 +4,20 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3044824252307692"
      crossorigin="anonymous"></script>
     <title>PR0XY</title>
+    <script>
+    window.onload = function() {
+      // Check if user preferences are stored, otherwise use defaults
+      var userTitle = localStorage.getItem('userTitle') || 'Your Default Title';
+      var userIcon = localStorage.getItem('userIcon') || 'default-icon.png';
+
+      // Set tab title
+      document.title = userTitle;
+
+      // Set tab icon
+      var iconLink = document.querySelector("link[rel~='icon']");
+      iconLink.href = userIcon;
+    }
+  </script>
   </head>
   <body>
     <iframe src="https://24y3bhj234bhht87b2t8723t68ht3683gv.netlify.app" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
