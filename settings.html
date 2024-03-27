@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/popup.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" />
+    <script>
+    window.onload = function() {
+      // Check if user preferences are stored, otherwise use defaults
+      var userTitle = localStorage.getItem('userTitle') || 'Your Default Title';
+      var userIcon = localStorage.getItem('userIcon') || 'default-icon.png';
+
+      // Set tab title
+      document.title = userTitle;
+
+      // Set tab icon
+      var iconLink = document.querySelector("link[rel~='icon']");
+      iconLink.href = userIcon;
+    }
+  </script>
     <style>
       body {
         font-family: Roboto;
