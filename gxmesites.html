@@ -134,6 +134,8 @@
           flex: 0 0 calc(16.666% - 20px);
           box-sizing: border-box;
         display: none;
+        opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+        transition: opacity 0.3s ease-in-out; /* Add transition effect for opacity change */
         }
 
         .image-item a {
@@ -583,7 +585,7 @@
           </a>
         </div>
         
-          <script>
+<script>
     // Function to perform search
     function searchGames() {
         // Get input value and convert to lowercase for case-insensitive search
@@ -591,15 +593,12 @@
         var games = document.querySelectorAll('.image-item');
 
         // Loop through each game item
-        games.forEach(function(game, index) {
+        games.forEach(function(game) {
             var title = game.querySelector('strong').innerText.toLowerCase();
             // If title includes search query, display the game; otherwise, hide it
             if (title.includes(query)) {
-                // Delay the fade-in effect based on the index of the game item
-                setTimeout(function() {
-                    game.style.display = 'block';
-                    game.style.opacity = '1';
-                }, 1000 + index * 100); // Start fading in after 1 second, then each subsequent item will fade in 100ms after the previous one
+                game.style.display = 'block';
+                game.style.opacity = '1';
             } else {
                 game.style.display = 'none';
             }
@@ -618,22 +617,6 @@
                 game.style.display = 'block';
                 game.style.opacity = '1';
             }, 1000 + index * 100); // Start fading in after 1 second, then each subsequent item will fade in 100ms after the previous one
-        });
-    }
-</script>
-
-    // Add event listener to trigger search on keyup event
-    document.getElementById('searchInput').addEventListener('keyup', searchGames);
-
-    // Fade in all game items initially
-    window.onload = function() {
-        var games = document.querySelectorAll('.image-item');
-        games.forEach(function(game, index) {
-            // Delay the fade-in effect based on the index of the game item
-            setTimeout(function() {
-                game.style.display = 'block';
-                game.style.opacity = '1';
-            }, index * 1000); // 1000ms = 1 second
         });
     }
 </script>
