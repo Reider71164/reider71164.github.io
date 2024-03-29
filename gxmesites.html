@@ -599,12 +599,28 @@
                 setTimeout(function() {
                     game.style.display = 'block';
                     game.style.opacity = '1';
-                }, index * 1000); // 1000ms = 1 second
+                }, 1000 + index * 100); // Start fading in after 1 second, then each subsequent item will fade in 100ms after the previous one
             } else {
                 game.style.display = 'none';
             }
         });
     }
+
+    // Add event listener to trigger search on keyup event
+    document.getElementById('searchInput').addEventListener('keyup', searchGames);
+
+    // Fade in all game items initially after 1 second
+    window.onload = function() {
+        var games = document.querySelectorAll('.image-item');
+        games.forEach(function(game, index) {
+            // Delay the fade-in effect based on the index of the game item
+            setTimeout(function() {
+                game.style.display = 'block';
+                game.style.opacity = '1';
+            }, 1000 + index * 100); // Start fading in after 1 second, then each subsequent item will fade in 100ms after the previous one
+        });
+    }
+</script>
 
     // Add event listener to trigger search on keyup event
     document.getElementById('searchInput').addEventListener('keyup', searchGames);
