@@ -115,27 +115,9 @@
       <div></div>
             <!-- Button to trigger the openGame function -->
 <button onclick="openGame()" style="color: black;">Cloaker</button>
-<script>
-function openGame() {
-    // Open a new window
-    var win = window.open("about:blank");
-
-    // Create an iframe element
-    var iframe = document.createElement('iframe');
-    iframe.src = window.location.href; // Load the current page URL into the iframe
-
-    // Set iframe styles
-    iframe.style.cssText = 'position: fixed; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999;';
-
-    // Append the iframe to the new window's document body
-    if (win) {
-        win.document.body.appendChild(iframe);
-    } else {
-        alert("Popup blocked. Please allow popups for this site and try again.");
-    }
-}
-</script>
-      <strong class="section-text">DAWG I JUST LOST SO MUCH PROGRESS ON THE SITE💀<br>https://discord.gg/7UwPzsA4sp</strong>
+      <strong class="section-text">TRYNA HIT 100 GAMES BEFORE SPRING BREAK IS OVER!<br>https://discord.gg/7UwPzsA4sp</strong>
+      <!-- Search bar -->
+<input type="text" id="searchInput" placeholder="Search for a game">
       
 
       <style>
@@ -151,6 +133,7 @@ function openGame() {
           margin-bottom: 20px;
           flex: 0 0 calc(16.666% - 20px);
           box-sizing: border-box;
+        display: none;
         }
 
         .image-item a {
@@ -600,9 +583,65 @@ function openGame() {
           </a>
         </div>
         
-          
-        
+          <script>
+    // Function to perform search
+    function searchGames() {
+        // Get input value and convert to lowercase for case-insensitive search
+        var query = document.getElementById('searchInput').value.toLowerCase();
+        var games = document.querySelectorAll('.image-item');
 
+        // Loop through each game item
+        games.forEach(function(game, index) {
+            var title = game.querySelector('strong').innerText.toLowerCase();
+            // If title includes search query, display the game; otherwise, hide it
+            if (title.includes(query)) {
+                // Delay the fade-in effect based on the index of the game item
+                setTimeout(function() {
+                    game.style.display = 'block';
+                    game.style.opacity = '1';
+                }, index * 1000); // 1000ms = 1 second
+            } else {
+                game.style.display = 'none';
+            }
+        });
+    }
+
+    // Add event listener to trigger search on keyup event
+    document.getElementById('searchInput').addEventListener('keyup', searchGames);
+
+    // Fade in all game items initially
+    window.onload = function() {
+        var games = document.querySelectorAll('.image-item');
+        games.forEach(function(game, index) {
+            // Delay the fade-in effect based on the index of the game item
+            setTimeout(function() {
+                game.style.display = 'block';
+                game.style.opacity = '1';
+            }, index * 1000); // 1000ms = 1 second
+        });
+    }
+</script>
+        
+<script>
+function openGame() {
+    // Open a new window
+    var win = window.open("about:blank");
+
+    // Create an iframe element
+    var iframe = document.createElement('iframe');
+    iframe.src = window.location.href; // Load the current page URL into the iframe
+
+    // Set iframe styles
+    iframe.style.cssText = 'position: fixed; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999;';
+
+    // Append the iframe to the new window's document body
+    if (win) {
+        win.document.body.appendChild(iframe);
+    } else {
+        alert("Popup blocked. Please allow popups for this site and try again.");
+    }
+}
+</script>
 
 <script>
     function openFunnyShooter() {
