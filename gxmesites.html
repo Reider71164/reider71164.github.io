@@ -149,6 +149,9 @@
           border: 1px solid #ddd;
           border-radius: 8px;
         }
+        #searchInput {
+        color: black;
+    }
       </style>
 
       <div class="image-container">
@@ -616,7 +619,7 @@
             setTimeout(function() {
                 game.style.display = 'block';
                 game.style.opacity = '1';
-            }, 1000 + index * 100); // Start fading in after 1 second, then each subsequent item will fade in 100ms after the previous one
+            }, 1000 + index * 50); // Start fading in after 1 second, then each subsequent item will fade in 100ms after the previous one
         });
     }
 </script>
