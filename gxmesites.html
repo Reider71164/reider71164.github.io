@@ -154,7 +154,7 @@
     }
       </style>
 
-      <div class="image-container">
+      <div class="animated fadeInLeft delay-1s image-container">
         <div class="image-item">
           <a href="https://forms.gle/qsTPzdexvfsG3io6A">
             <img src="images/gamerequest.png" alt="Game Request" />
@@ -616,20 +616,6 @@
     // Add event listener to trigger search on keyup event
     document.getElementById('searchInput').addEventListener('keyup', searchGames);
 
-    // Initially hide all game items and fade them in
-    window.onload = function() {
-        var games = document.querySelectorAll('.image-item');
-        games.forEach(function(game) {
-            // Set opacity to 0 to trigger fade-in effect
-            game.style.opacity = '0';
-        });
-        // Delay setting opacity to 1 to ensure fade-in effect
-        setTimeout(function() {
-            games.forEach(function(game) {
-                game.style.opacity = '1';
-            });
-        }, 100);
-    }
 </script>
         
 <script>
