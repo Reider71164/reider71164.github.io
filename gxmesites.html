@@ -133,9 +133,9 @@
           margin-bottom: 20px;
           flex: 0 0 calc(16.666% - 20px);
           box-sizing: border-box;
-        display: none;
-        opacity: 0; /* Set initial opacity to 0 for fade-in effect */
-        transition: opacity 0.3s ease-in-out; /* Add transition effect for opacity change */
+          display: none;
+          opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+          transition: opacity 0.3s ease-in-out; /* Add transition effect for opacity change */
         }
 
         .image-item a {
@@ -606,10 +606,9 @@
             var title = game.querySelector('strong').innerText.toLowerCase();
             // If title includes search query, display the game; otherwise, hide it
             if (title.includes(query)) {
-                game.style.display = 'block';
                 game.style.opacity = '1';
             } else {
-                game.style.display = 'none';
+                game.style.opacity = '0';
             }
         });
     }
@@ -617,15 +616,12 @@
     // Add event listener to trigger search on keyup event
     document.getElementById('searchInput').addEventListener('keyup', searchGames);
 
-    // Fade in all game items initially after 1 second
+    // Fade in all game items initially
     window.onload = function() {
         var games = document.querySelectorAll('.image-item');
-        games.forEach(function(game, index) {
-            // Delay the fade-in effect based on the index of the game item
-            setTimeout(function() {
-                game.style.display = 'block';
-                game.style.opacity = '1';
-            }, 1000 + index * 50); // Start fading in after 1 second, then each subsequent item will fade in 100ms after the previous one
+        games.forEach(function(game) {
+            // Set opacity to 1 to trigger fade-in effect
+            game.style.opacity = '1';
         });
     }
 </script>
