@@ -616,13 +616,19 @@
     // Add event listener to trigger search on keyup event
     document.getElementById('searchInput').addEventListener('keyup', searchGames);
 
-    // Fade in all game items initially
+    // Initially hide all game items and fade them in
     window.onload = function() {
         var games = document.querySelectorAll('.image-item');
         games.forEach(function(game) {
-            // Set opacity to 1 to trigger fade-in effect
-            game.style.opacity = '1';
+            // Set opacity to 0 to trigger fade-in effect
+            game.style.opacity = '0';
         });
+        // Delay setting opacity to 1 to ensure fade-in effect
+        setTimeout(function() {
+            games.forEach(function(game) {
+                game.style.opacity = '1';
+            });
+        }, 100);
     }
 </script>
         
