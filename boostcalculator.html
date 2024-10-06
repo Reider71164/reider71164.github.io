@@ -68,7 +68,7 @@
             const fastJumpLimit = 8.5;
             const slowJumpMultiplier = 1.1;
             const fastJumpMultiplier = 1.3;
-            const targetPlayersInLobby = 10;  
+            const targetPlayersInLobby = 10; 
 
             // Validation
             if (isNaN(playersTagged) || isNaN(playersInLobby) || playersTagged < 0 || playersTagged > playersInLobby || playersInLobby < 1) {
@@ -76,15 +76,13 @@
                 return;
             }
 
-            let convertedTagged = (playersTagged / playersInLobby) * targetPlayersInLobby;
+            let currentSpeed = (fastJumpLimit - slowJumpLimit) / (playersInLobby - 1) * (playersInLobby - playersTagged) + slowJumpLimit;
+            let currentMultiplier = (fastJumpMultiplier - slowJumpMultiplier) / (playersInLobby - 1) * (playersInLobby - playersTagged) + slowJumpMultiplier;
 
-            let speed = (fastJumpLimit - slowJumpLimit) / (targetPlayersInLobby - 1) * (targetPlayersInLobby - convertedTagged) + slowJumpLimit;
-            let multi = (fastJumpMultiplier - slowJumpMultiplier) / (targetPlayersInLobby - 1) * (targetPlayersInLobby - convertedTagged) + slowJumpMultiplier;
+            let equivalentTagged = (targetPlayersInLobby - 1) * (currentSpeed - slowJumpLimit) / (fastJumpLimit - slowJumpLimit);
 
             document.getElementById('result').innerHTML = `
-                <p>Converted to 10 players:</p>
-                <p>Jump Speed/Limit: ${speed.toFixed(2)}</p>
-                <p>Multiplier: ${multi.toFixed(2)}</p>
+                <p>Boost Equivalent: ${equivalentTagged.toFixed(1)}/${targetPlayersInLobby}</p>
             `;
         }
     </script>
