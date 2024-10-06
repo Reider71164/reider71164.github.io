@@ -8,7 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #121212;
+            color: #f1f1f1;
             margin: 0;
             padding: 0;
         }
@@ -16,39 +17,44 @@
             max-width: 500px;
             margin: 100px auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #1e1e1e;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
         }
         h1 {
-            color: blue;
+            color: #4CAF50; /* Green accent */
         }
         input {
             width: 45%;
             padding: 10px;
             margin: 10px 2.5%;
-            border: 1px solid #ccc;
+            border: 1px solid #333;
             border-radius: 5px;
+            background-color: #333;
+            color: #f1f1f1;
         }
         button {
             padding: 10px 20px;
-            background-color: blue;
+            background-color: #4CAF50; /* Green accent */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background-color: darkblue;
+            background-color: #45a049;
         }
         .result {
             margin-top: 20px;
+            color: #f1f1f1;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Boost Calculator</h1>
+        <h1>Boost Calculator - Made By Raider</h1>
+        <p>This converts a boost like  to the boost out of 10 (e.g: 3/5 to 5.5/10)</p>
         <p>Enter the number of players tagged and the total number of players:</p>
 
         <input type="number" id="playersTagged" placeholder="Players Tagged" min="0">
@@ -66,9 +72,7 @@
 
             const slowJumpLimit = 6.5;
             const fastJumpLimit = 8.5;
-            const slowJumpMultiplier = 1.1;
-            const fastJumpMultiplier = 1.3;
-            const targetPlayersInLobby = 10; 
+            const targetPlayersInLobby = 10;  // Target is 10 players in the lobby
 
             // Validation
             if (isNaN(playersTagged) || isNaN(playersInLobby) || playersTagged < 0 || playersTagged > playersInLobby || playersInLobby < 1) {
@@ -76,10 +80,11 @@
                 return;
             }
 
+            // Calculate the speed using current playersTagged and playersInLobby
             let currentSpeed = (fastJumpLimit - slowJumpLimit) / (playersInLobby - 1) * (playersInLobby - playersTagged) + slowJumpLimit;
-            let currentMultiplier = (fastJumpMultiplier - slowJumpMultiplier) / (playersInLobby - 1) * (playersInLobby - playersTagged) + slowJumpMultiplier;
 
-            let equivalentTagged = (targetPlayersInLobby - 1) * (currentSpeed - slowJumpLimit) / (fastJumpLimit - slowJumpLimit);
+            // Reverse the formula to find the equivalent tagged players in a 10-player lobby
+            let equivalentTagged = targetPlayersInLobby - ((currentSpeed - slowJumpLimit) * (targetPlayersInLobby - 1)) / (fastJumpLimit - slowJumpLimit);
 
             document.getElementById('result').innerHTML = `
                 <p>Boost Equivalent: ${equivalentTagged.toFixed(1)}/${targetPlayersInLobby}</p>
